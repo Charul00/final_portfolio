@@ -1,0 +1,22 @@
+[
+  {
+    "num": "5+",
+    "text": "Years of experience"
+  },
+  {
+    "num": 12,
+    "text": "Projects Completed"
+  },
+    {
+    "num": 3,
+    "text": "Projects In Progress"
+  },
+  {
+    "num": 8,
+    "text": "Technologies mastered"
+  },
+  {
+    "num": 500,
+    "text": "Code commits"
+  }
+]

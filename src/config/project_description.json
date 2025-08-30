@@ -1,0 +1,39 @@
+[
+    {
+        "num": "01",
+        "category": "Check migrations utility",
+        "title": "Check migration utility",
+        "code": "checkMigrationsCode",
+        "stack": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "Django"
+            }
+        ],
+        "github": " ",
+        "description": "### **Check Migrations Command**\n\nA custom **Django management command** designed to **analyze migration files** within a specific app and detect **potentially risky database operations** (e.g., `RemoveField`, `AlterField`, `DeleteModel`).\n________________________________________________________________________________________\n________________________________________________________________________________________\n🔹 **Key Features:**\n* Scans and inspects all migration files of a given Django app.\n* Detects risky operations that may cause **data loss, schema changes, or production issues**.\n* Supports excluding specific migrations from scanning.\n* Configurable flag (`--throw-exception`) to raise errors when risky operations are found (useful in CI/CD pipelines).\n* Integrated with a **custom logging system** for better visibility of migration analysis.\n________________________________________________________________________________________\n________________________________________________________________________________________\n\n🔹 **Tech Highlights:**\n* Built using **Python, Django ORM & MigrationLoader**.\n* Utilizes **custom logger with structured logging**.\n* Leverages **importlib & pkgutil** for dynamic module discovery.\n* Can be seamlessly integrated into **automated deployment workflows** to enforce database safety checks."
+    },
+    {
+        "num": "02",
+        "category": "Fullstack",
+        "title": "Project 2",
+        "code": "console.log(\"Hello World\");",
+        "stack": [
+            {
+                "name": "React.js"
+            },
+            {
+                "name": "Node.js"
+            },
+            {
+                "name": "Next.js"
+            },
+            {
+                "name": "MongoDb"
+            }
+        ],
+        "github": " "
+    }
+]

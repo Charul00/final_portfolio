@@ -1,0 +1,16 @@
+{
+    "name": "Samir Saitwal",
+    "username": "Samir",
+    "Description": "   With 5+ years of professional experience, I specialize in developing scalable web applications using Python, Django, and Flask, with strong expertise in REST API development, cloud platforms (AWS, Azure, Heroku), and containerization (Docker, Kubernetes). I have successfully led projects involving sprint planning, team management, and ER model design, delivering machine-learning-based multi-tenant solutions. Skilled across both backend and frontend (HTML, CSS, Bootstrap, JavaScript), I have optimized application performance with Elasticsearch, RabbitMQ, Celery, and integrated secure payment gateways. Proficient in working with databases such as MongoDB, PostgreSQL, and MySQL, I bring full-stack expertise and a passion for continuously learning emerging technologies.",
+    "experience": "5+ Years",
+    "email": "saitwalsamir@gmail.com",
+    "phone": "+91 8999395349",
+    "nationality": "Indian",
+    "address": "Pune, Maharashtra, India",
+    "freelance": "Available",
+    "github": "https://github.com/samir321-pixel",
+    "linkedin": "https://www.linkedin.com/in/samir-saitwal-b517a0148/",
+    "resume": "https://media.licdn.com/dms/document/media/v2/D4D2DAQFDd9aYotweFg/profile-treasury-document-pdf-analyzed/B4DZhq9kacHYAk-/0/1754141183320?e=1757548800&v=beta&t=b5tmoGWKEVdZjRYxJziLSwV7MUDl68QeZhRQczj29Gw",
+
+    "job_profile":"Full Stack Developer"
+}
