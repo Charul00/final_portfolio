@@ -80,7 +80,7 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           {/* Left side info */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[25px] h-[30%]">
+            <div className="flex flex-col gap-[25px] h-[70%]">
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
@@ -108,12 +108,12 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[660px] mb-12"
+              className="xl:h-[640px] mb-12"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[1200px] bg-black rounded-lg p-4 overflow-y-auto">
+                  <div className="h-full max-h-[80vh] bg-black rounded-lg overflow-y-auto p-4">
                     <SyntaxHighlighter
                       language="python"
                       style={vscDarkPlus}

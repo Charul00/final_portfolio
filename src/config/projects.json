@@ -17,7 +17,7 @@
   },
   {
     "num": "02",
-    "category": "Backend Architecture",
+    "category": "Strategy Pattern with Enum and Processor",
     "title": "Dynamic Notification Dispatch System in Django Using Enum-Driven Strategy Pattern with Processor Abstraction",
     "code": "Dynamic Notification Dispatch System in Django Using Enum-Driven Strategy Pattern with Processor Abstraction",
     "description": "This implementation demonstrates a robust, extensible notification framework in Django that leverages the Strategy Design Pattern, Python Enums, and a centralized Processor class for dynamic execution of notification strategies. The system supports multiple notification channels (Email, SMS, Push) and enables type-safe, runtime selection of strategies through Enums. Each strategy conforms to a common interface, ensuring consistent behavior while allowing seamless integration of additional strategies without modifying the processor. The framework is designed for high maintainability, CI/CD integration, and future extensibility, providing a structured approach to managing complex business rules and operational workflows in production-grade Django applications.",

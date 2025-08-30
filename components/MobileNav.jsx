@@ -23,7 +23,7 @@ const links = [
     path: "/work"
   },
   {
-    name: "contact",
+    name: "Hire Me!",
     path: "/contact",
   },
 ];
@@ -40,7 +40,7 @@ const MobileNav = () => {
         <div className="mt-32 mb-40 text-center text-2xl">
 
             <Link href="/"></Link>
-            <h1 className="text-4xl font-semibold">{profile.username}<span className="text-accent">.</span></h1>
+            <h1 className="text-4xl font-semibold">{profile.username}<span className="text-accent"></span></h1>
             </div>
         {/*nav */}
         <nav className="flex flex-col justify-center items-center gap-8">
