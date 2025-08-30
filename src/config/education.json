@@ -1,0 +1,11 @@
+{
+  "icon": "/assets/resume/cap.svg",
+  "title": "My education",
+  "description": "",
+  "items": [
+    {
+      "institution": "P. R. pote college of engineering",
+      "duration": "2014-2018"
+    }
+  ]
+}

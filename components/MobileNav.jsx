@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import { CiMenuFries } from 'react-icons/ci';
-
+import profile from "../src/config/profile.json";
 const links = [
   {
     name: "Home",
@@ -40,7 +40,7 @@ const MobileNav = () => {
         <div className="mt-32 mb-40 text-center text-2xl">
 
             <Link href="/"></Link>
-            <h1 className="text-4xl font-semibold">Samir<span className="text-accent">.</span></h1>
+            <h1 className="text-4xl font-semibold">{profile.username}<span className="text-accent">.</span></h1>
             </div>
         {/*nav */}
         <nav className="flex flex-col justify-center items-center gap-8">

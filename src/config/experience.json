@@ -1,0 +1,25 @@
+{
+    "title": "My experiences",
+    "items": [
+        {
+            "company": "Data axle Solutions Pvt. Ltd",
+            "duration": "Aug 2023 - Present",
+            "profile": "Software Engineer",
+            "jobDescription": "Led development of scalable web applications, integrated APIs, and optimized backend performance.",
+            "projectName": "Next Gen Genie",
+            "projectDescription": "Designed and implemented a machine-learning based solution with role-based access and payment integration.",
+            "domain": "Sales & Marketing",
+            "url": "https://example-saas.com"
+        },
+        {
+            "company": "Shyena Tech yarns Pvt. Ltd",
+            "duration": "Aug 2022 - Aug 2023",
+            "profile": "Senior Python Developer",
+            "jobDescription": "Worked on microservices, API design, and deployment pipelines.",
+            "projectName": "My Clean City",
+            "projectDescription": "Built interactive dashboards powered by Kafka and Elasticsearch for live data processing.",
+            "domain": "Data Engineering",
+            "url": null
+        }
+    ]
+}

@@ -14,31 +14,25 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { Description } from "@radix-ui/react-dialog";
+import profile from "../../src/config/profile.json";
 
 const info = [
-
     {
         icon: <FaPhoneAlt />,
         title: "Phone",
-        description: "(+91) 8999395349",
-
+        description: profile.phone,
     },
     {
         icon: <FaEnvelope />,
         title: "Email",
-        description: "saitwalsamir@gmail.com",
+        description: profile.email,
     },
-
     {
         icon: <FaMapMarkerAlt />,
         title: "Address",
-        description: "Pune, India",
+        description: profile.address,
     }
-
-
 ]
 
 import { motion } from "framer-motion";

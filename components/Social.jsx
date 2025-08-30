@@ -1,13 +1,9 @@
 import Link from "next/link";
-
-
-
+import profile from "../src/config/profile.json";
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
-
 const socials = [
-
-    { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/samir-saitwal-b517a0148/" },
-    { icon: <FaGithub />, path: "https://github.com/samir321-pixel" },
+    { icon: <FaLinkedin />, path: profile.linkedin },
+    { icon: <FaGithub />, path: profile.github },
 ]
 
 const Social = ({ containerStyles, iconStyles }) => {
