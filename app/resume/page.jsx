@@ -15,8 +15,7 @@ import {
     FaAws,
 } from "react-icons/fa";
 import { FiCopy, FiCheck } from "react-icons/fi"; // ✅ import icons
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { SiTailwindcss, SiNextdotjs, SiPython, SiDjango, SiFlask, SiFastapi, SiRabbitmq, SiCelery, SiElasticsearch, SiKubernetes, SiHeroku, SiApachekafka, SiGraphql, Si365Datascience, SiDocker, SiMicrosoftazure, SiJson, SiBootstrap, SiSwagger, SiJsonwebtokens, SiPostman, SiFirebase, SiSnyk, SiPostgresql, SiMysql, SiMongodb, SiNeo4J, SiSqlite } from "react-icons/si";
 const iconMap = {
@@ -54,6 +53,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { formatDuration, intervalToDuration } from "date-fns";
+
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 // skills data
 const skills = {
@@ -65,10 +66,27 @@ const skills = {
 
 const Resume = () => {
     const [copiedField, setCopiedField] = useState(null);
+    const [durations, setDurations] = useState({});
+    useEffect(() => {
+        const updateDurations = () => {
+            const newDurations = {};
+            experience.items.forEach((item, idx) => {
+                const [startStr, endStr] = item.duration.split(" - ");
+                const startDate = new Date(startStr);
+                const endDate = endStr === "Present" ? new Date() : new Date(endStr);
+                newDurations[idx] = formatDuration(intervalToDuration({ start: startDate, end: endDate }));
+            });
+            setDurations(newDurations);
+        };
+
+        updateDurations(); // initial call
+        const interval = setInterval(updateDurations, 1000); // update every second
+
+        return () => clearInterval(interval); // cleanup on unmount
+    }, []);
     const handleCopy = (value, label) => {
         navigator.clipboard.writeText(value);
         setCopiedField(label);
-
         setTimeout(() => setCopiedField(null), 2000); // reset after 2s
     };
 
@@ -109,9 +127,10 @@ const Resume = () => {
                                                 key={index}
                                                 className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                                             >
-                                                <span className="text-accent">{item.duration}</span>
+                                                {item.duration}
                                                 <h3>{item.degree}</h3>
                                                 <p>{item.institution}</p>
+                                                <p className="text-sm text-right">- {item.location}</p>
                                             </li>
                                         ))}
                                     </ul>
@@ -121,10 +140,10 @@ const Resume = () => {
 
                         {/* experience */}
                         <TabsContent value="experience" className="w-full">
-                            <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                            <div className="flex flex-col gap-[10px] text-center xl:text-left">
                                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                                <ScrollArea className="h-[400px]">
-                                    <ul className="grid grid-cols-1 gap-[30px]">
+                                <ScrollArea className="h-[100px]">
+                                    <ul className="grid grid-cols-1 gap-[10px]">
                                         {experience.items.map((item, index) => (
                                             <li
                                                 key={index}
@@ -133,18 +152,25 @@ const Resume = () => {
                                                 <h4 className="text-2xl font-semibold text-accent">
                                                     {item.company}
                                                 </h4>
-                                                <span className="text-white/60">{item.duration}</span>
-                                                <p className="text-lg">{item.profile}</p>
-                                                <p className="text-white/70">{item.jobDescription}</p>
+                                                <p className="text-[12px]">{item.duration} : {durations[index]}</p>
+                                                <p className="text-[20px] font-semibold underline">Profile: {item.profile}</p>
+                                                <p className="text-[13px]">{item.jobDescription}</p>
                                                 <div>
                                                     <p className="font-semibold">
                                                         Project: {item.projectName}
                                                     </p>
-                                                    <p className="text-white/70">
+                                                    <p className="text-[13px] text-white/90 whitespace-normal break-words">
                                                         {item.projectDescription}
                                                     </p>
                                                 </div>
-                                                <p className="text-white/60">Domain: {item.domain}</p>
+                                                <div>
+                                                    <p className="font-semibold">
+                                                        Domain: {item.domain}
+                                                    </p>
+                                                    <p className="font-semibold">
+                                                        Job Location: {item.job_location}
+                                                    </p>
+                                                </div>
                                                 {item.url && (
                                                     <a
                                                         href={item.url}

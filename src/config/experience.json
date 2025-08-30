@@ -1,25 +1,38 @@
 {
-    "title": "My experiences",
+    "title": "My Experiences",
     "items": [
         {
-            "company": "Data axle Solutions Pvt. Ltd",
+            "company": "Data Axle Solutions Pvt. Ltd",
             "duration": "Aug 2023 - Present",
             "profile": "Software Engineer",
-            "jobDescription": "Led development of scalable web applications, integrated APIs, and optimized backend performance.",
+            "jobDescription": "As a Software Engineer on Sales Genie, I engineered scalable backend architectures handling 150M+ consumer and 18M+ business records. I applied Onion Architecture with SOLID, DRY, and SOC principles, leveraging design abstractions (processors, handlers, validators, factories) to enforce modularity and extensibility. I re-architected pricing and account workflows into a strategy-driven framework, enabling dynamic credit handling and freemium checkout with async scaling via Celery and Django signals. I strengthened delivery with high-coverage pytest suites, regression benchmarks, and CI-enforced code quality. My contributions include GraphQL APIs for advanced features (Smart Lead Recommendation, Freemium Onboarding), a unified feedback pipeline, and secure integrations with Azure AD, Microsoft Identity, Graph API, and AWS S3. Additionally, I promoted engineering rigor by mentoring peers, conducting design reviews, and leading sprint demos and retrospectives.",
             "projectName": "Next Gen Genie",
-            "projectDescription": "Designed and implemented a machine-learning based solution with role-based access and payment integration.",
+            "projectDescription": "Cloud-based sales intelligence platform unifying B2B/B2C lead generation. Provides 18M+ business and 150M+ consumer records with ~95% accuracy and 20M+ annual phone validations. Offers precise filters, continuous updates, CRM automation, email campaigns, and ROI dashboards — enabling teams to streamline workflows and boost conversions.",
             "domain": "Sales & Marketing",
-            "url": "https://example-saas.com"
+            "url": "https://www.salesgenie.com/",
+            "job_location": "Pune, Maharashtra, India"
         },
         {
-            "company": "Shyena Tech yarns Pvt. Ltd",
+            "company": "Shyena Tech Yarns Pvt. Ltd",
             "duration": "Aug 2022 - Aug 2023",
-            "profile": "Senior Python Developer",
-            "jobDescription": "Worked on microservices, API design, and deployment pipelines.",
+            "profile": "Senior Python Engineer",
+            "jobDescription": "Responsible for architecting and developing scalable backend services with Django and Django REST Framework, ensuring high availability and performance across applications. I integrated Elasticsearch to deliver advanced search functionalities and optimized indexing mechanisms, enabling faster and more accurate data retrieval. To support large-scale asynchronous workloads, I designed and implemented distributed data processing pipelines using Celery and RabbitMQ, ensuring efficient consumption and transformation of external data sources. I also strengthened the security posture of the system by implementing package vulnerability management and version control using Snyk. User authentication and authorization flows were designed and integrated with Azure Active Directory, providing secure and seamless access management across services. Additionally, I handled complex database management processes, optimizing ORM queries for both performance and reliability in production workloads. Beyond core development, I also built robust integrations with multiple third-party systems by leveraging APIs, file handling mechanisms, and custom connectors, thereby enabling seamless data exchange and extending the overall system capabilities.",
+            "domain": "Enterprise, (GovTech)",
+            "projectName": "SEDA Integration Platform",
+            "projectDescription": "The project focused on the seamless integration of waste report notifications from multiple heterogeneous applications into the centralized SEDA Core system, enabling streamlined and efficient waste management across diverse departments. Through SEDA-Integrations, notifications were intelligently routed and distributed to the appropriate departmental systems for timely handling and resolution. Furthermore, real-time synchronization mechanisms ensured that updates and status changes originating from departmental applications were consistently reflected within the SEDA Core, maintaining an up-to-date and unified view of all waste reports across the organization.",
+            "url": null,
+            "job_location": "Pune, Maharashtra, India"
+        },
+        {
+            "company": "Shyena Tech Yarns Pvt. Ltd",
+            "duration": "Feb 2021 - Aug 2022",
+            "profile": "Python Developer",
+            "jobDescription": "Responsible for diagnosing and resolving intricate application behavior and deployment challenges directly within Kubernetes clusters, ensuring production-grade reliability and scalability. I streamlined environment-specific workflows by designing and managing robust configuration strategies using .env files, supporting seamless transitions across development, staging, and production. To enhance observability and proactive issue detection, I engineered a custom monitoring solution in Django, integrating real-time Slack notifications for rapid incident response. I also developed secure and efficient inter-service integrations, enabling Django-based systems to communicate seamlessly with external departmental platforms for smooth data exchange. Additionally, I optimized Django’s integration with the Apache server to support high-performance static and media content delivery, including image storage and large-scale media management.",
             "projectName": "My Clean City",
-            "projectDescription": "Built interactive dashboards powered by Kafka and Elasticsearch for live data processing.",
-            "domain": "Data Engineering",
-            "url": null
+            "projectDescription": "This project is centered on the development and maintenance of a centralized waste management notification system, designed specifically for administrators and departmental handlers to monitor and manage citizen-submitted reports through a dedicated dashboard. Acting as a unified platform, the application consolidates all incoming waste reports, enabling administrators to track, categorize, and take necessary actions efficiently. The system ensures real-time synchronization of updates, allowing administrators and handlers to seamlessly modify report statuses, while simultaneously notifying citizens about the progress and resolution of their submissions. By streamlining communication between departments and citizens, the project enhances transparency, improves operational efficiency, and ensures timely handling of waste management activities across regions.",
+            "domain": "Enterprise, (GovTech)",
+            "url": null,
+            "job_location": "Pune, Maharashtra, India"
         }
     ]
 }

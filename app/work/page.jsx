@@ -7,62 +7,57 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { BsGithub } from "react-icons/bs";
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import checkMigrationsCode from "@/app/work/code_snippet/checkMigrationsCode";
-import Link from "next/link";
 import WorkSliderBtns from "@/components/ui/WorkSliderBtns";
+import rawProjects from "../../src/config/projects.json";
+import strategyClass from "@/app/work/code_snippet/strategyclass";
 
-const projects = [
-  {
-    num: "01",
-    category: "Check migrations utility",
-    title: "Check migration utility",
-    code: checkMigrationsCode,
-    stack: [{ name: "Python" }, { name: "Django" }],
-    github: " ",
-    description: `
-### **Check Migrations Command**
+// const projects = [
+//   {
+//     num: "01",
+//     category: "Check migrations utility",
+//     title: "Check migration utility",
+//     code: checkMigrationsCode,
+//     stack: [{ name: "Python" }, { name: "Django" }],
+//     github: " ",
+//     description: `
+// Advanced Django Management Command for Static Analysis of App Migrations to Identify Potentially Destructive Database Operations.
+// ________________________________________________________________________________________
+// 🔹 **Key Features:**
+// * This Django management command analyzes all migration files of a specified app to detect potentially risky operations, such as schema changes, field removals, or model deletions, which could lead to data loss or production issues. It supports excluding specific migrations and includes a --throw-exception flag to enforce strict validation, making it suitable for CI/CD pipelines. The command is integrated with a custom logging system for clear visibility and traceability of migration analysis.
+// ________________________________________________________________________________________
+// ________________________________________________________________________________________
 
-A custom **Django management command** designed to **analyze migration files** within a specific app and detect **potentially risky database operations** (e.g., \`RemoveField\`, \`AlterField\`, \`DeleteModel\`).
-________________________________________________________________________________________
-________________________________________________________________________________________
-🔹 **Key Features:**
-* Scans and inspects all migration files of a given Django app.
-* Detects risky operations that may cause **data loss, schema changes, or production issues**.
-* Supports excluding specific migrations from scanning.
-* Configurable flag (\`--throw-exception\`) to raise errors when risky operations are found (useful in CI/CD pipelines).
-* Integrated with a **custom logging system** for better visibility of migration analysis.
-________________________________________________________________________________________
-________________________________________________________________________________________
-
-🔹 **Tech Highlights:**
-* Built using **Python, Django ORM & MigrationLoader**.
-* Utilizes **custom logger with structured logging**.
-* Leverages **importlib & pkgutil** for dynamic module discovery.
-* Can be seamlessly integrated into **automated deployment workflows** to enforce database safety checks.
-    `,
-  },
-  {
-    num: "02",
-    category: "Fullstack",
-    title: "Project 2",
-    code: `console.log("Hello World");`,
-    stack: [
-      { name: "React.js" },
-      { name: "Node.js" },
-      { name: "Next.js" },
-      { name: "MongoDb" },
-    ],
-    github: " ",
-  },
-];
+// 🔹 **Tech Highlights:**
+// * Implemented using Python and the Django ORM with MigrationLoader, this command employs a custom structured logging system and leverages importlib and pkgutil for dynamic module discovery. It is designed for seamless integration into automated deployment workflows, providing robust database safety checks and ensuring migrations are analyzed reliably before production deployment.
+//     `,
+//   },
+//   {
+//     num: "02",
+//     category: "Fullstack",
+//     title: "Project 2",
+//     code: `console.log("Hello World");`,
+//     stack: [
+//       { name: "React.js" },
+//       { name: "Node.js" },
+//       { name: "Next.js" },
+//       { name: "MongoDb" },
+//     ],
+//     github: " ",
+//   },
+// ];
+const projects = rawProjects.map((proj) => {
+  if (proj.title === "Check migration utility") {
+    return { ...proj, code: checkMigrationsCode };
+  } else if (
+    proj.title ===
+    "Dynamic Notification Dispatch System in Django Using Enum-Driven Strategy Pattern with Processor Abstraction"
+  ) {
+    return { ...proj, code: strategyClass };
+  } else {
+    return proj;
+  }
+});
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
@@ -85,14 +80,14 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           {/* Left side info */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
+            <div className="flex flex-col gap-[25px] h-[30%]">
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white capitalize">
                 {project.category}
               </h2>
-              <ul className="flex gap-4">
+              <ul className="flex gap-1">
                 {project.stack.map((item, index) => (
                   <li key={index} className="text-xl text-accent">
                     {item.name}
@@ -101,7 +96,7 @@ const Work = () => {
                 ))}
               </ul>
               {/* ✅ Markdown-rendered description */}
-              <div className="text-white/80 text-sm leading-relaxed prose prose-invert max-w-none">
+              <div className="text-white/90 text-sm leading-relaxed prose prose-invert max-w-none">
                 <ReactMarkdown>{project.description}</ReactMarkdown>
               </div>
               <div className="border border-white/20"></div>
@@ -130,12 +125,11 @@ const Work = () => {
                         fontSize: "0.85rem",
                       }}
                     >
-                      {project.code}
+                      {typeof project.code === "string" ? project.code : project.code.toString()}
                     </SyntaxHighlighter>
                   </div>
                 </SwiperSlide>
               ))}
-
               <WorkSliderBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
                 btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"

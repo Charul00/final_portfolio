@@ -1,0 +1,34 @@
+[
+  {
+    "num": "01",
+    "category": "Check migrations utility",
+    "title": "Check migration utility",
+    "code": "checkMigrationsCode",
+    "stack": [
+      {
+        "name": "Python"
+      },
+      {
+        "name": "Django"
+      }
+    ],
+    "github": " ",
+    "description": "Advanced Django Management Command for Static Analysis of App Migrations to Identify Potentially Destructive Database Operations. \n \n \n🔹 Key Features:\n* This Django management command analyzes all migration files of a specified app to detect potentially risky operations, such as schema changes, field removals, or model deletions, which could lead to data loss or production issues. It supports excluding specific migrations and includes a --throw-exception flag to enforce strict validation, making it suitable for CI/CD pipelines. The command is integrated with a custom logging system for clear visibility and traceability of migration analysis. \n \n \n🔹 Tech Highlights:\n* Implemented using Python and the Django ORM with MigrationLoader, this command employs a custom structured logging system and leverages importlib and pkgutil for dynamic module discovery. It is designed for seamless integration into automated deployment workflows, providing robust database safety checks and ensuring migrations are analyzed reliably before production deployment."
+  },
+  {
+    "num": "02",
+    "category": "Backend Architecture",
+    "title": "Dynamic Notification Dispatch System in Django Using Enum-Driven Strategy Pattern with Processor Abstraction",
+    "code": "Dynamic Notification Dispatch System in Django Using Enum-Driven Strategy Pattern with Processor Abstraction",
+    "description": "This implementation demonstrates a robust, extensible notification framework in Django that leverages the Strategy Design Pattern, Python Enums, and a centralized Processor class for dynamic execution of notification strategies. The system supports multiple notification channels (Email, SMS, Push) and enables type-safe, runtime selection of strategies through Enums. Each strategy conforms to a common interface, ensuring consistent behavior while allowing seamless integration of additional strategies without modifying the processor. The framework is designed for high maintainability, CI/CD integration, and future extensibility, providing a structured approach to managing complex business rules and operational workflows in production-grade Django applications.",
+    "stack": [
+       {
+        "name": "Python"
+      },
+      {
+        "name": "Django"
+      }
+    ],
+    "github": " "
+  }
+]
